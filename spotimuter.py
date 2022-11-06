@@ -30,6 +30,7 @@ def spotify_mute_loop(mute_list):
         else:
             # Allowed Song is playing
             if is_muted:
+                time.sleep(0.55)  # to avoid hearing the last bit of the ad
                 spotilib.mute()
                 is_muted = False
 
