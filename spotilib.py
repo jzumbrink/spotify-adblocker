@@ -2,17 +2,11 @@ import win32gui
 import win32api
 import time
 
-###Virtual-KeyCodes###
+# Virtual-KeyCodes
 Media_Next = 0xB0
 Media_Previous = 0xB1
 Media_Pause = 0xB3  # Play/Pause
 Media_Mute = 0xAD
-
-# possible Window Names
-pos_spotify_window_name = [
-    "Spotify Free",
-    "SpotifyMainWindow"
-]
 
 
 class SpotifyInterface:
@@ -56,40 +50,8 @@ def create_spotify_interface_obj(wait_time=2) -> SpotifyInterface:
     window_id = win32gui.GetForegroundWindow()
     return SpotifyInterface(window_id)
 
-# ###SpotifyBlock###
-# def createfolder(folder_path="C:\SpotiBlock"):
-#     if not os.path.exists(folder_path):
-#         os.makedirs(folder_path)
-#     else:
-#         pass
-#
-#
-# def createfile(file_path="C:\SpotiBlock\Block.txt"):
-#     if not os.path.exists(file_path):
-#         file = open(file_path, "a")
-#         file.write("ThisFirstLineWillBeIgnoredButIsNecessaryForUse")
-#
-#
-# def blocklist(file_path="C:\SpotiBlock\Block.txt"):
-#     block_list = []
-#     for line in open(file_path, "r"):
-#         if not line == "":
-#             block_list.append(line.strip())
-#     return block_list
-#
-#
-# def add_to_blocklist(file_path="C:\SpotiBlock\Block.txt"):
-#     with open(file_path, 'a') as text_file:
-#         text_file.write("\n" + song_info())
-#
-#
-# def reset_blocklist(file_path="C:\SpotiBlock\Block.txt"):
-#     with open(file_path, 'w') as text_file:
-#         text_file.write("ThisFirstLineWillBeIgnored")
-#         pass
 
-
-###Media Controls###
+# Media Controls
 def hwcode(Media):
     hwcode = win32api.MapVirtualKey(Media, 0)
     return hwcode
